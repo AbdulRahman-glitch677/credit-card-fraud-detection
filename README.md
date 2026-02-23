@@ -80,11 +80,33 @@ metrics were used:
 
 ## Results
 
-- Random Forest outperformed Logistic Regression in fraud detection.
-- Applying SMOTE significantly improved recall for fraudulent
-  transactions.
-- The Random Forest model trained on SMOTE-balanced data achieved the
-  best overall performance.
+Baseline (Default Threshold = 0.5):
+
+- Fraud Recall: 84%
+- Fraud Precision: 85%
+- ROC-AUC Score: 0.973
+- 82 out of 98 fraudulent transactions were correctly detected.
+
+Threshold Optimization:
+
+Lowering the decision threshold improved fraud detection performance.
+
+- At threshold = 0.4:
+  - Fraud Recall: 86%
+  - Fraud Precision: 79%
+
+- At threshold = 0.3:
+  - Fraud Recall: 90%
+  - Fraud Precision: 73%
+
+- At threshold = 0.2:
+  - Fraud Recall: 90%
+  - Fraud Precision: 59%
+
+Lower thresholds increase fraud detection (recall) but also increase false positives. 
+This trade-off is critical in real-world fraud detection systems where missing fraud 
+is often more costly than investigating false alarms.
+
 
 ---
 
